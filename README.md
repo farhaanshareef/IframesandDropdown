@@ -31,8 +31,8 @@ To run the code examples, you need to have the following software installed on y
 2. Install the required dependencies:
 
 pip install selenium
+
 3. Download and configure the WebDriver for your preferred web browser (e.g., ChromeDriver for Chrome).
 4. Open a terminal or command prompt.
 5. Navigate to the repository directory.
 6. Run the Python scripts to execute the examples.
-
