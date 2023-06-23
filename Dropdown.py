@@ -5,20 +5,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
 
 class DropDown:
     def __init__(self, driver):
         self.driver = driver
-
-    def set_browser(self):
-
-        s = Service("//Users//mac//Downloads//chromedriver_mac_arm64")
-        # create webdriver object
-        driver = webdriver.Chrome(service=s)
-        # Open the website and maximize the window
-        driver.get("https://www.makemytrip.com/")
-        driver.maximize_window()
 
     def switch_frame(self):
         try:
@@ -105,9 +98,8 @@ class DropDown:
             print("Element is not visible. Test case failed!")
 
 #setting up the browser
-s = Service("//Users//mac//Downloads//chromedriver_mac_arm64")
-# create webdriver object
-driver = webdriver.Chrome(service=s)
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
 # Open the website and maximize the window
 driver.get("https://www.makemytrip.com/")
 driver.maximize_window()
